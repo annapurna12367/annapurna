@@ -4,7 +4,7 @@ const {User}= require('./model/User');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
-const bcrypt= require('bcrypt');
+const bcrypt= require('bcryptjs');
 const jwt =require('jsonwebtoken');
 const {Product}=require('./model/product');
 const{Crat}=require('./model/cart');
@@ -15,8 +15,10 @@ app.use(cors());
 app.use(morgan('dev'))
 
 
+//mHYapMoqDbRdKdL3
+let MONGODB_URL="mongodb+srv://mathadannapurana901:mHYapMoqDbRdKdL3@cluster0.yxs7g.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose.connect('mongodb://127.0.0.1:27017/kleproject')
+mongoose.connect(MONGODB_URL)
 .then(()=>{
     console.log("DB is connected")
 }).catch((err)=>{
